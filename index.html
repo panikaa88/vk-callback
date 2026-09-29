@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>autopost — вход VK</title>
+</head>
+<body>
+<p>Вход выполнен, окно можно закрыть, если оно не закроется само...</p>
+<script>
+  // VK редиректит сюда с ?code=...&state=... (или ?error=...).
+  // Эта страница только передаёт эти параметры на локальный сервер
+  // программы autopost на том же компьютере — сама она их не хранит
+  // и никуда не отправляет.
+  var target = "http://127.0.0.1:53682/callback" + window.location.search;
+  window.location.replace(target);
+</script>
+</body>
+</html>
